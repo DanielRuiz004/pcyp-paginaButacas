@@ -1,0 +1,132 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+
+}
+
+.cuerpo {
+    flex: 1;
+    max-width: 800px;
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.panel-controles {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.boton {
+    padding: 8px 14px;
+    font-size: 13px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.boton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.boton-primario {
+    background-color: #007bff;
+    border-color: #0069d9;
+    color: #ffffff;
+}
+
+.boton-primario:hover:not(:disabled) {
+    background-color: #0069d9;
+}
+
+.boton-secundario {
+    background-color: #6c757d;
+    border-color: #5a6268;
+    color: #ffffff;
+}
+
+.boton-secundario:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+.boton-auxiliar {
+    background-color: #17a2b8;
+    border-color: #117a8b;
+    color: #ffffff;
+}
+
+.boton-auxiliar:hover:not(:disabled) {
+    background-color: #117a8b;
+}
+
+.alerta {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid transparent;
+}
+
+.alerta-exito {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alerta-error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.alerta-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+
+.panel-reserva {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fdfdfe;
+    border: 1px solid #e2e3e5;
+    border-radius: 4px;
+}
+
+.subtitulo-reserva {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 5px;
+}
+
+.info-seleccion p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.info-seleccion .boton {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 10px 18px;
+}
+
+.texto-ayuda {
+    color: #6c757d;
+    font-style: italic;
+    font-size: 13px;
+    margin: 5px 0;
+}

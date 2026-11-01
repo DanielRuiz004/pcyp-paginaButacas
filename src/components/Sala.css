@@ -1,0 +1,85 @@
+/* Contenedor principal de la sala */
+.sala-contenedor {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* Representación básica de la pantalla */
+.pantalla-cine {
+    background-color: #495057;
+    color: #ffffff;
+    padding: 8px 15px;
+    margin: 0 auto 25px auto;
+    width: 75%;
+    border-radius: 3px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+/* Grilla centrada y flexible para las butacas */
+.grilla-butacas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 650px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px dashed #ced4da;
+    border-radius: 4px;
+    min-height: 120px;
+    align-items: center;
+}
+
+.mensaje-vacio {
+    color: #6c757d;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Leyenda inferior con muestras de color */
+.sala {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #e9ecef;
+    font-size: 13px;
+    color: #333333;
+}
+
+.info-sala {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ico {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    border: 1px solid #777;
+}
+
+.muestraDispo {
+    background-color: #d4edda;
+    border-color: #28a745;
+}
+
+.muestraSel {
+    background-color: #cce5ff;
+    border-color: #007bff;
+}
+
+.muestraOcup {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+}

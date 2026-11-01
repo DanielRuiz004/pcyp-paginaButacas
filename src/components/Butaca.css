@@ -1,0 +1,66 @@
+/* Estilos básicos para cada butaca individual */
+.butaca-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin: 4px;
+    padding: 2px;
+    border: 2px solid #999;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-align: center;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+/* 1. Butaca Disponible (Verde clásico) */
+.butaca-disponible {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+    cursor: pointer;
+}
+
+.butaca-disponible:hover {
+    background-color: #c3e6cb;
+    box-shadow: 0 0 4px rgba(40, 167, 69, 0.5);
+}
+
+/* 2. Butaca Seleccionada por el usuario (Azul / Amarillo clásico) */
+.butaca-seleccionada {
+    background-color: #cce5ff !important;
+    border-color: #007bff !important;
+    color: #004085 !important;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+}
+
+/* 3. Butaca Ocupada (Rojo / Deshabilitada) */
+.butaca-ocupada {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+/* Textos dentro de la butaca */
+.butaca-id {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.butaca-pos {
+    font-size: 10px;
+    color: #555;
+}
+
+.butaca-precio {
+    font-size: 10px;
+    margin-top: 1px;
+}
