@@ -3,10 +3,9 @@ import Butaca from './Butaca';
 import './Sala.css';
 
 /**
- * Props:
- * - butacas: array con la lista de butacas recibidas del backend
- * - butacaSeleccionada: butaca actualmente seleccionada por el usuario (o null)
- * - onSeleccionarButaca: callback para actualizar la selección
+ * butacas: array con la lista de butacas recibidas del backend
+ * butacaSeleccionada: butaca actualmente seleccionada por el usuario o null
+ * onSeleccionarButaca: callback para actualizar la selecciom
  */
 const Sala = ({ butacas, butacaSeleccionada, onSeleccionarButaca }) => {
     return (
@@ -17,11 +16,11 @@ const Sala = ({ butacas, butacaSeleccionada, onSeleccionarButaca }) => {
 
             <div className="grilla-butacas">
                 {butacas && butacas.length > 0 ? (
-                    butacas.map((b) => (
+                    butacas.map((butaca) => (
                         <Butaca
-                            key={b.id}
-                            butaca={b}
-                            seleccionada={butacaSeleccionada && butacaSeleccionada.id === b.id}
+                            key={butaca.id}
+                            butaca={butaca}
+                            seleccionada={butacaSeleccionada && butacaSeleccionada.id === butaca.id}
                             onSeleccionar={onSeleccionarButaca}
                         />
                     ))

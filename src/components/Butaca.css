@@ -5,9 +5,8 @@
     align-items: center;
     justify-content: center;
     width: 65px;
-    height: 65px;
-    margin: 4px;
-    padding: 2px;
+    height: 4.5rem;
+    margin: 0;
     border: 2px solid #999;
     border-radius: 4px;
     font-family: Arial, sans-serif;
@@ -42,7 +41,7 @@
 
 /* 3. Butaca Ocupada (Rojo / Deshabilitada) */
 .butaca-ocupada {
-    background-color: #f8d7da;
+    background-color: #fbdfe2a2;
     border-color: #dc3545;
     color: #721c24;
     cursor: not-allowed;
@@ -63,4 +62,8 @@
 .butaca-precio {
     font-size: 10px;
     margin-top: 1px;
+}
+
+.img-butaca {
+    width: 2rem;
 }

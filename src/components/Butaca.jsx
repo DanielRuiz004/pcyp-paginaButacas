@@ -1,20 +1,16 @@
 import React from 'react';
 import './Butaca.css';
+import butacaDisp from "../assets/butacaDisponible.png"
+import butacaOcup from "../assets/butacaOcupada.png"
 
 /**
- * Componente Butaca:
- * Representa un asiento individual en la sala.
- * 
- * Props:
- * - butaca: objeto con { id, fila, columna, disponible, precio }
- * - seleccionada: boolean (indica si el usuario hizo clic en esta butaca para reservarla)
- * - onSeleccionar: función callback cuando el usuario hace clic
+ *butaca: objeto con { id, fila, columna, disponible, precio }
  */
 const Butaca = ({ butaca, seleccionada, onSeleccionar }) => {
-    // Si disponible es false, la butaca ya está reservada/ocupada
+    // si disponible es false la butaca ya esta reservada/ocupada
     const estaDisponible = butaca.disponible;
 
-    // Determinamos la clase CSS según el estado de la butaca
+    //CSS segun el estado de la butaca
     let claseEstado = 'butaca-disponible';
     if (!estaDisponible) {
         claseEstado = 'butaca-ocupada';
@@ -22,7 +18,7 @@ const Butaca = ({ butaca, seleccionada, onSeleccionar }) => {
         claseEstado = 'butaca-seleccionada';
     }
 
-    // Manejador del clic: solo permite seleccionar si está disponible
+    //  solo permite seleccionar si está disponible
     const manejarClick = () => {
         if (estaDisponible && onSeleccionar) {
             onSeleccionar(butaca);
@@ -41,9 +37,9 @@ const Butaca = ({ butaca, seleccionada, onSeleccionar }) => {
                     : `Butaca ${butaca.id} (Fila ${butaca.fila}, Col ${butaca.columna}) - $${butaca.precio}`
             }
         >
+            <img className="img-butaca" src={estaDisponible ? butacaDisp : butacaOcup} />
             <span className="butaca-id">B{butaca.id}</span>
             <span className="butaca-pos">F{butaca.fila}-C{butaca.columna}</span>
-            <span className="butaca-precio">${butaca.precio}</span>
         </button>
     );
 };

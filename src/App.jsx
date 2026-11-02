@@ -6,10 +6,9 @@ import './App.css';
 
 
 function App() {
-    // URL base de la API REST de Spring Boot
+    //url base de la api rest
     const API_URL = 'https://pcyp-trabajofinal-semaforos-1.onrender.com/api/butacas';
 
-    // Estados de la aplicación
     const [butacas, setButacas] = useState([]);
     const [butacaSeleccionada, setButacaSeleccionada] = useState(null);
     const [mensaje, setMensaje] = useState({ texto: '', tipo: '' });
@@ -25,7 +24,6 @@ function App() {
                 throw new Error('Error al consultar butacas.');
             }
             const datos = await respuesta.json();
-            //datos.sort((a, b) => a.id - b.id);
             setButacas(datos);
             //setMensaje({ texto: 'Sala actualizada correctamente.', tipo: 'info' });
         } catch (error) {
@@ -39,16 +37,13 @@ function App() {
         }
     };
 
-    // Al montar el componente, cargamos las butacas iniciales
+    // al montar el componente cargamos las butacas iniciales
     useEffect(() => {
         cargarButacas();
     }, []);
 
-    /**
-     * 2. Manejar la selección de una butaca en la interfaz
-     */
     const manejarSeleccionarButaca = (butaca) => {
-        // Si hace clic en la misma que ya tenía seleccionada, la deselecciona
+        // si hace clic en la misma que ya tenia seleccionada la deselecciona
         if (butacaSeleccionada && butacaSeleccionada.id === butaca.id) {
             setButacaSeleccionada(null);
         } else {
@@ -58,8 +53,8 @@ function App() {
     };
 
     /**
-     * 3. Confirmar Reserva de la Butaca (POST /api/butacas/{id}/reservar)
-     * Este endpoint ejecuta la exclusión mutua.
+     * confirmar reserva de la butaca (POST /api/butacas/{id}/reservar)
+     * ejecuta la exclusión mutua.
      */
     const reservarButaca = async () => {
         if (!butacaSeleccionada) return;
@@ -79,14 +74,14 @@ function App() {
                     texto: `ÉXITO: ${textoRespuesta}`,
                     tipo: 'exito',
                 });
-                setButacaSeleccionada(null); // Limpiamos la selección
-                await cargarButacas(); // Refrescamos el estado de la sala
+                setButacaSeleccionada(null); //
+                await cargarButacas(); // refrescamos el estado de la sala
             } else {
                 setMensaje({
                     texto: `RECHAZADO: ${textoRespuesta}`,
                     tipo: 'error',
                 });
-                await cargarButacas(); // Si falló porque otro la reservó, refrescamos para mostrarla en rojo
+                await cargarButacas(); // Si fallo porque otro la reserv refrescamos para mostrarla en rojo
             }
         } catch (error) {
             console.error(error);
@@ -116,7 +111,7 @@ function App() {
                     }),
                 });
             }
-            setMensaje({ texto: 'Se crearon 10 butacas de prueba exitosamente.', tipo: 'exito' });
+            setMensaje({ texto: 'Se crearon 10 butacas de prueba', tipo: 'exito' });
             await cargarButacas();
         } catch (error) {
             console.error(error);
@@ -143,26 +138,24 @@ function App() {
                     )}
                 </section>
 
-                {/* Mensaje de alerta o feedback del backend */}
+                {/*mensaje de alertadel backend */}
                 {mensaje.texto && (
                     <div className={`alerta alerta-${mensaje.tipo}`}>
                         {mensaje.texto}
                     </div>
                 )}
 
-                {/* Visualización de la Sala y sus Butacas */}
                 <Sala
                     butacas={butacas}
                     butacaSeleccionada={butacaSeleccionada}
                     onSeleccionarButaca={manejarSeleccionarButaca}
                 />
 
-                {/* Panel inferior para confirmar la reserva */}
                 <section className="panel-reserva">
-                    <h3 className="subtitulo-reserva">Detalle de Selección</h3>
+                    <h3 className="subtitulo-reserva">Detalle de Seleccion</h3>
                     {butacaSeleccionada ? (
                         <div className="info-seleccion">
-                            <p><strong>Butaca seleccionada:</strong> Número {butacaSeleccionada.id}</p>
+                            <p><strong>Butaca seleccionada:</strong> Numero {butacaSeleccionada.id}</p>
                             <p><strong>Ubicación:</strong> Fila {butacaSeleccionada.fila}, Columna {butacaSeleccionada.columna}</p>
                             <p><strong>Precio:</strong> ${butacaSeleccionada.precio}</p>
                             <button
@@ -170,18 +163,17 @@ function App() {
                                 onClick={reservarButaca}
                                 disabled={cargando}
                             >
-                                {cargando ? 'Procesando...' : 'Confirmar Reserva (Prueba de Semáforo)'}
+                                {cargando ? 'Procesando...' : 'Confirmar Reserva (Prueba de Semaforo)'}
                             </button>
                         </div>
                     ) : (
                         <p className="texto-ayuda">
-                            Haga clic sobre una butaca verde (disponible) en la sala para seleccionarla.
+                            Haga clic sobre una butaca para seleccionarla.
                         </p>
                     )}
                 </section>
             </main>
 
-            {/* Pie de página */}
             <Footer />
         </div>
     );
