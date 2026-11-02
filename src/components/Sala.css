@@ -70,16 +70,14 @@
 }
 
 .muestraDispo {
-    background-color: #d4edda;
-    border-color: #28a745;
+    background-color: #00c32d;
 }
 
 .muestraSel {
-    background-color: #cce5ff;
-    border-color: #007bff;
+    background-color: #1c73cf;
+
 }
 
 .muestraOcup {
-    background-color: #f8d7da;
-    border-color: #dc3545;
+    background-color: #c81827;
 }

@@ -71,7 +71,7 @@ function App() {
 
             if (respuesta.ok) {
                 setMensaje({
-                    texto: `ÉXITO: ${textoRespuesta}`,
+                    texto: `${textoRespuesta}`,
                     tipo: 'exito',
                 });
                 setButacaSeleccionada(null); //
@@ -97,9 +97,10 @@ function App() {
     const generarButacasPrueba = async () => {
         setCargando(true);
         try {
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 1; i <= 20; i++) {
                 const fila = Math.ceil(i / 5);
                 const columna = ((i - 1) % 5) + 1;
+
                 await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -111,7 +112,7 @@ function App() {
                     }),
                 });
             }
-            setMensaje({ texto: 'Se crearon 10 butacas de prueba', tipo: 'exito' });
+            setMensaje({ texto: 'Se crearon 20 butacas de prueba', tipo: 'exito' });
             await cargarButacas();
         } catch (error) {
             console.error(error);
@@ -133,7 +134,7 @@ function App() {
 
                     {butacas.length === 0 && (
                         <button className="boton boton-auxiliar" onClick={generarButacasPrueba} disabled={cargando}>
-                            Crear 10 Butacas de prueba
+                            Crear 20 Butacas de prueba
                         </button>
                     )}
                 </section>
