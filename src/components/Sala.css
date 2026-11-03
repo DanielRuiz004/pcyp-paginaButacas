@@ -1,4 +1,3 @@
-/* Contenedor principal de la sala */
 .sala-contenedor {
     background-color: #ffffff;
     border: 1px solid #cccccc;
@@ -8,7 +7,6 @@
     text-align: center;
 }
 
-/* Representación básica de la pantalla */
 .pantalla-cine {
     background-color: #495057;
     color: #ffffff;
@@ -21,7 +19,6 @@
     font-size: 13px;
 }
 
-/* Grilla centrada y flexible para las butacas */
 .grilla-butacas {
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +40,6 @@
     font-size: 14px;
 }
 
-/* Leyenda inferior con muestras de color */
 .sala {
     display: flex;
     justify-content: center;

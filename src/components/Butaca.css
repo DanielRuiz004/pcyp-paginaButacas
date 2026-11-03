@@ -1,4 +1,3 @@
-/* Estilos básicos para cada butaca individual */
 .butaca-item {
     display: inline-flex;
     flex-direction: column;
@@ -16,7 +15,7 @@
     user-select: none;
 }
 
-/* 1. Butaca Disponible (Verde clásico) */
+
 .butaca-disponible {
     background-color: #d4edda;
     border-color: #28a745;
@@ -29,7 +28,7 @@
     box-shadow: 0 0 4px rgba(40, 167, 69, 0.5);
 }
 
-/* 2. Butaca Seleccionada por el usuario (Azul / Amarillo clásico) */
+
 .butaca-seleccionada {
     background-color: #cce5ff !important;
     border-color: #007bff !important;
@@ -39,7 +38,7 @@
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
 }
 
-/* 3. Butaca Ocupada (Rojo / Deshabilitada) */
+
 .butaca-ocupada {
     background-color: #fbdfe2a2;
     border-color: #dc3545;
@@ -48,7 +47,7 @@
     opacity: 0.85;
 }
 
-/* Textos dentro de la butaca */
+
 .butaca-id {
     font-weight: bold;
     font-size: 13px;
